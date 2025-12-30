@@ -85,7 +85,7 @@ class CTHooks {
         }
 
         // Skip antispam test of not new edit if flag is set
-        if ( $wgCTNewEditsOnly && !$editor->isNew) {
+        if ( $wgCTNewEditsOnly && $editor->getArticle()->getTitle()->exists() ) {
             return $allowEdit;
         }
 
