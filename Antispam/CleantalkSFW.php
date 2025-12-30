@@ -30,7 +30,8 @@ class CleantalkSFW extends CleantalkHelper
 	public function __construct()
 	{
 		$this->table_prefix = "";
-		$this->db = wfGetDB(DB_PRIMARY);
+		$this->db = \MediaWiki\MediaWikiServices::getInstance()
+		            ->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 	}
 
 	public function unversal_query($query, $straight_query = false)

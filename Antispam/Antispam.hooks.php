@@ -238,8 +238,9 @@ public static function onTitleMove( Title $title, Title $newtitle, User $user )
         $text .= CTBody::AddJSCode();
         CTBody::ctSetCookie();
 
-        $dbr = wfGetDB(DB_PRIMARY);
-
+        $dbr = \MediaWiki\MediaWikiServices::getInstance()
+                ->getDBLoadBalancer()
+                ->getConnection( DB_PRIMARY );
 
         /* SFW starts */
 
