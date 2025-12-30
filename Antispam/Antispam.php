@@ -69,6 +69,12 @@ $wgCTShowLink = true;
 $wgCTSFW = false;
 
 /**
+ * Check on edits
+ * Enabling this option makes SpamFileWall check active on edits.
+ */
+$wgCTCheckEdits = true;
+
+/**
  * Edit new edits only
  * Check all edits or new edits only.
  */
